@@ -1,0 +1,186 @@
+from time import sleep
+# Rock paper scissor Game
+def Rock():
+    print(Player2_name,' Turn')
+    sleep(1)
+    print('Enter Rock or Paper or Scissor. First Letter Capital!')
+    sleep(1)
+    opponent = input()
+    sleep(1)
+    if opponent == 'Rock' and You == 'Rock':
+        sleep(1)
+        print(Player2_name, opponent)
+        sleep(1)
+        print(Player1_name, You)
+        sleep(1)
+        return 'Draw'
+    elif opponent == 'Paper' and You == 'Rock':
+        sleep(1)
+        print(Player2_name, opponent)
+        sleep(1)
+        print(Player1_name, You)
+        sleep(1)
+        return 'Lose'
+    elif opponent == 'Scissor' and You == 'Rock':
+        sleep(1)
+        print(Player2_name, opponent)
+        sleep(1)
+        print(Player1_name, You)
+        sleep(1)
+        return 'Won'
+
+
+def Paper():
+    print(Player2_name,' Turn')
+    sleep(1)
+    print('Enter Rock or Paper or Scissor. First Letter Capital!')
+    sleep(1)
+    opponent = input()
+    sleep(1)
+    if opponent == 'Rock' and You == 'Paper':
+        sleep(1)
+        print(Player2_name, opponent)
+        sleep(1)
+        print(Player1_name, You)
+        sleep(1)
+        return 'Won'
+    elif opponent == 'Paper' and You == 'Paper':
+        sleep(1)
+        print(Player2_name, opponent)
+        sleep(1)
+        print(Player1_name, You)
+        sleep(1)
+        return 'Draw'
+    elif opponent == 'Scissor' and You == 'Paper':
+        sleep(1)
+        print(Player2_name, opponent)
+        sleep(1)
+        print(Player1_name, You)
+        sleep(1)
+        return 'Lose'
+
+    
+
+
+def Scissor():
+    print(Player2_name,' Turn')
+    sleep(1)
+    print('Enter Rock or Paper or Scissor. First Letter Capital!!')
+    sleep(1)
+    opponent = input()
+    sleep(1)
+    if opponent == 'Rock' and You == 'Scissor':
+        sleep(1)
+        print(Player2_name, opponent)
+        sleep(1)
+        print(Player1_name, You)
+        sleep(1)
+        return 'Lose'
+    elif opponent == 'Paper' and You == 'Scissor':
+        sleep(1)
+        print(Player2_name, opponent)
+        sleep(1)
+        print(Player1_name, You)
+        sleep(1)
+        return 'Won'
+    elif opponent == 'Scissor' and You == 'Scissor':
+        sleep(1)
+        print(Player2_name, opponent)
+        sleep(1)
+        print(Player1_name, You)
+        sleep(1)
+        return 'Draw'
+
+
+def Update_Score(Your_Score, Opponent_Score):
+    print(Player1_name ,Your_Score, Player2_name ,Opponent_Score) 
+
+
+print('Lets play a game.')
+sleep(1)
+print('It is called Rock, Paper, Scissor.')
+sleep(1)
+print('Enter Rock or Paper or Scissor')
+Play = 3
+Your_Score = 0
+Opponent_Score = 0
+print('Enter Player 1 name.')
+Player1_name = input('Enter name here.')
+sleep(1)
+print('Enter Player 2 name.')
+Player2_name = input('Enter name here.')
+sleep(1)
+print('Enter Rock or Paper or Scissor. First Letter Capital')
+while Play > 0:
+    sleep(1)
+    print(Player1_name, 'Turn')
+    sleep(1)
+    You = input()
+
+    if You == 'Rock':
+        Result = Rock()
+        if Result == 'Draw':
+           print('It is a Draw')
+           Your_Score = Your_Score + 1
+           Opponent_Score = Opponent_Score + 1
+           Update_Score(Your_Score, Opponent_Score)
+        elif Result == 'Won':
+           print(Player1_name,' Won')
+           Your_Score = Your_Score + 1
+           Opponent_Score = Opponent_Score + 0
+           Update_Score(Your_Score, Opponent_Score)
+        elif Result == 'Lose':
+           print(Player2_name,' Won')
+           Your_Score = Your_Score + 0
+           Opponent_Score = Opponent_Score + 1
+           Update_Score(Your_Score, Opponent_Score)
+
+    elif You == 'Paper':
+        Result = Paper()
+        if Result == 'Draw':
+           print('It is a Draw')
+           Your_Score = Your_Score + 1
+           Opponent_Score = Opponent_Score + 1
+           Update_Score(Your_Score, Opponent_Score)
+        elif Result == 'Won':
+           print(Player1_name,' Won')
+           Your_Score = Your_Score + 1
+           Opponent_Score = Opponent_Score + 0
+           Update_Score(Your_Score, Opponent_Score)
+        elif Result == 'Lose':
+           print(Player2_name,' Won')
+           Your_Score = Your_Score + 0
+           Opponent_Score = Opponent_Score + 1
+           Update_Score(Your_Score, Opponent_Score)
+      
+    elif You == 'Scissor':
+        Result = Scissor()
+        if Result == 'Draw':
+           print('It is a Draw!')
+           Your_Score = Your_Score + 1
+           Opponent_Score = Opponent_Score + 1
+           Update_Score(Your_Score, Opponent_Score)
+        elif Result == 'Won':
+           print(Player1_name,' Won!')
+           Your_Score = Your_Score + 1
+           Opponent_Score = Opponent_Score + 0
+           Update_Score(Your_Score, Opponent_Score)
+        elif Result == 'Lose':
+           print(Player2_name,' Won!')
+           Your_Score = Your_Score + 0
+           Opponent_Score = Opponent_Score + 1
+           Update_Score(Your_Score, Opponent_Score)
+    elif You == 'Exit':
+        break
+    else:
+      print('INVALID!!!!! or First letter capital-> Rock, Paper, Scissor')
+      Play = Play + 1
+    Play = Play - 1
+
+if Your_Score > Opponent_Score:
+    print(Player1_name + ' is the final winner with score: ', Your_Score)
+else:
+    print(Player2_name + ' is the final winner with score: ', Opponent_Score)
+
+
+
